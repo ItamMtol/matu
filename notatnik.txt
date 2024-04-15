@@ -1,0 +1,17 @@
+ar kosmetyczki
+ara
+ <form action="tworzenie.php" method="post">
+        Podaj login<input type="text" name="login"><br>
+        Podaj email<input type="email" name="email"><br>
+        Podaj imie <input type="text" name="imie"><br>
+        Podaj nazwisko <input type="text" name="nazwisko"><br>
+        Podaj hasło<input type="password" name="password1"><br>
+        Powtórz hasło<input type="password" name="password2"><br>
+        Podaj specjalizacje <input type="text" name="spec" ><br>
+        <button>Utwórz!</button>
+    </form>
+
+konto admin trzeba zrobic
+jak bedzie ci sie nudzic dodaj swieta
+sprawdzanie tylko w ten dzien co jest wizyta
+tylko ludzi ktorzy sa w tablicy pracownikow
