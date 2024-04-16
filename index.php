@@ -23,18 +23,18 @@
        $a =  $_SESSION["log"];
        $_SERVER["wiz"]=1 ;
        $conn = mysqli_connect('localhost','root','','kosma');
+       $b = date("Y-m-d");
     $sql = "SELECT date(`czas`) as tak FROM `wizyty` \n"
 
     . "INNER JOIN klientki on klientki.id = wizyty.id_klienta\n"
 
     . "INNER JOIN kosmetyczki on kosmetyczki.id = wizyty.id_kosmetyczki\n"
 
-    . "WHERE kosmetyczki.login like \"$a\" or kosmetyczki.email like \"$a\" or klientki.email like \"$a\" or klientki.login like \"$a\";";
-    while( $row = mysqli_fetch_array(mysqli_query($conn, $sql)) ){
-        if( $row["tak"] == date("Y-m-d")){
+    . "WHERE (kosmetyczki.login like \"$a\" or kosmetyczki.email like \"$a\" or klientki.email like \"$a\" or klientki.login like \"$a\") and date(`czas`) = \"$b\";";
+        if( mysqli_query($conn, $sql)->num_rows > 0){
             echo '<script> alert("Dzisiaj masz wizytę!!!")</script>';
-        break;}
-    }}
+    }
+    }
     function strona(){
         echo '
         <div>
